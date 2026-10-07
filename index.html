@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pizzeria Slavonika · Osijek</title>
+<meta name="description" content="Pizzeria Slavonika u Tvrđi, Osijek. Pizza na drva, dostava po cijelom Osijeku.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Instrument+Serif:ital@0;1&amp;family=DM+Mono:wght@400;500&amp;family=Work+Sans:wght@400;500;600&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:#e9e5de; }
+  a { color: inherit; text-decoration: none; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+  a:hover { color: #e8a33d; }
+  @keyframes slavFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  @keyframes slavMarquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  ::selection { background:#e8a33d; color:#17140f; }
+</style>
+</helmet>
+
+<section ref="{{ rootRef }}" style="{{ pageStyle }}">
+  <div id="2a" style="{{ shellStyle }}">
+    <div style="{{ cardStyle }}">
+
+      <div ref="{{ navRef }}" style="{{ navStyle }}">
+        <div style="{{ navBarStyle }}">
+          <div style="{{ brandStyle }}">Pizzeria Slavonika</div>
+          <div style="{{ navLinksStyle }}">
+            <a href="#2a-menu" onClick="{{ goMenu }}">Menu</a><a href="#2a-prica" onClick="{{ goPrica }}">O nama</a><a href="#2a-prostor" onClick="{{ goProstor }}">Galerija</a><a href="#2a-recenzije" onClick="{{ goRecenzije }}">Recenzije</a><a href="#2a-dostava" onClick="{{ goDostava }}">Informacije</a>
+          </div>
+          <a href="#2a" style="{{ navCtaStyle }}" style-hover="background:#e8a33d;color:#17140f">Naruči online</a>
+          <button onClick="{{ toggleMenu }}" style="{{ burgerStyle }}" aria-label="Izbornik">{{ burgerIcon }}</button>
+        </div>
+        <div style="{{ mobileMenuStyle }}">
+          <a href="#2a-menu" onClick="{{ goMenu }}" style="padding:20px 0;border-bottom:1px solid rgba(232,163,61,.25)">Menu</a>
+          <a href="#2a-prica" onClick="{{ goPrica }}" style="padding:20px 0;border-bottom:1px solid rgba(232,163,61,.25)">O nama</a>
+          <a href="#2a-prostor" onClick="{{ goProstor }}" style="padding:20px 0;border-bottom:1px solid rgba(232,163,61,.25)">Galerija</a>
+          <a href="#2a-recenzije" onClick="{{ goRecenzije }}" style="padding:20px 0;border-bottom:1px solid rgba(232,163,61,.25)">Recenzije</a>
+          <a href="#2a-dostava" onClick="{{ goDostava }}" style="padding:20px 0">Informacije</a>
+        </div>
+      </div>
+
+
+      <div style="{{ heroStyle }}">
+        <div>
+          <div style="font:500 12px/1 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#d33a2c;margin-bottom:22px">Napuljsko tijesto, slavonsko srce</div>
+          <h1 style="{{ h1Style }}">Pizza za ljude<br>koji ne vole<br><em style="color:#d33a2c">žurbu.</em></h1>
+          <p style="font:400 18px/1.65 'Work Sans',sans-serif;color:#4c4638;max-width:400px;margin:0 0 30px">Osim kad naručuju dostavu. Onda smo najbrži u gradu. Tijesto stoji 48 sati, ti čekaš 24 minute.</p>
+          <div style="{{ heroBtnRowStyle }}">
+            <a href="#2a" style="{{ heroCtaStyle }}" style-hover="background:#e8a33d;color:#17140f">Naruči online</a>
+            <a href="#2a-menu" style-hover="color:#d33a2c;border-color:#d33a2c" style="border-bottom:2px solid #17140f;font:600 15px/1 'Work Sans',sans-serif;padding-bottom:4px">Vidi menu</a>
+          </div>
+          <div style="{{ phoneLineStyle }}">ili naruči na&nbsp; &nbsp;<a href="tel:+38531555123" style="{{ phoneNumStyle }}" style-hover="color:#e8a33d">031 555 123</a></div>
+        </div>
+        <div style="position:relative">
+          <div style="{{ pizzaBoxStyle }}">
+            <div style="{{ pizzaImgStyle }}"></div>
+            <div style="{{ ringStyle }}">
+              <div style="position:absolute;left:37.37%;top:19.51%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Slavonika</span></div>
+              <div style="position:absolute;left:62.63%;top:19.51%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Tvrđa</span></div>
+              <div style="position:absolute;left:80.49%;top:37.37%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Drava</span></div>
+              <div style="position:absolute;left:80.49%;top:62.63%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Margherita</span></div>
+              <div style="position:absolute;left:62.63%;top:80.49%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Baranjska</span></div>
+              <div style="position:absolute;left:37.37%;top:80.49%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Kukuruzište</span></div>
+              <div style="position:absolute;left:19.51%;top:62.63%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Četiri sira</span></div>
+              <div style="position:absolute;left:19.51%;top:37.37%;transform:translate(-50%,-50%)"><span style="{{ pillTextStyle }}">Capricciosa</span></div>
+            </div>
+            <div style="position:absolute;left:86.8%;top:13.2%;transform:translate(-50%,-50%) rotate(-6deg);display:flex;flex-direction:column;align-items:center;justify-content:center;background:#d33a2c;color:#fff;border-radius:999px;width:112px;height:112px;font:600 15px/1.35 'Work Sans',sans-serif;text-align:center;box-shadow:0 10px 24px rgba(23,20,15,.22);z-index:3">8 vrsta,<br>ti biraš!</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div id="2a-menu" style="{{ secMenuStyle }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:24px;flex-wrap:wrap">
+          <h2 style="font:400 46px/1 'Instrument Serif',serif;margin:0">Menu</h2>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="font:400 12px/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#a79c88">Veličina</span>
+            <div style="display:flex;background:#231f14;border-radius:999px;padding:5px;gap:4px">
+              <button onClick="{{ dPickSmall }}" style="{{ dSmallStyle }}">32 cm</button>
+              <button onClick="{{ dPickLarge }}" style="{{ dLargeStyle }}">45 cm</button>
+            </div>
+          </div>
+        </div>
+        <div style="{{ menuGridStyle }}">
+          <sc-for list="{{ pizzasD }}" as="p" hint-placeholder-count="8">
+            <div style="background:#1f1b11;border:1px solid #34301f;border-radius:14px;padding:16px;transition:border-color .25s,transform .25s" style-hover="border-color:#e8a33d;transform:translateY(-4px)">
+              <div style="{{ p.imgStyle }}"></div>
+              <div style="{{ cardHeadStyle }}">
+                <span style="font:400 24px/1.1 'Instrument Serif',serif">{{ p.name }}</span>
+                <span style="{{ cardPriceStyle }}">{{ p.price }}</span>
+              </div>
+              <p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#a79c88;margin:10px 0 0">{{ p.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border-top:1px solid #34301f;padding-top:22px;margin-top:26px;font:400 14px/1.6 'DM Mono',monospace;color:#a79c88">Bezglutensko tijesto +2,00 € · dodatak po izboru +1,50 €</div>
+      </div>
+
+      <div id="2a-prica" style="{{ secPricaStyle }}">
+        <div>
+          <div style="font:500 12px/1 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#d33a2c;margin-bottom:18px">Naša priča</div>
+          <h2 style="font:400 46px/1.04 'Instrument Serif',serif;margin:0 0 20px">Počelo je kao<br>svađa o tijestu.</h2>
+          <p style="font:400 17px/1.7 'Work Sans',sans-serif;color:#4c4638;margin:0 0 14px">Djed je tvrdio da se pizza radi kao kruh. Baka je tvrdila da se radi s ljubavlju. Nakon 27 godina znamo odgovor: oboje, plus peć na drva koju ložimo od šest ujutro.</p>
+          <p style="font:400 17px/1.7 'Work Sans',sans-serif;color:#4c4638;margin:0 0 14px">Brašno je talijansko, kulen je baranjski, a bosiljak nam raste na prozoru kuhinje. Ako ga vidiš kratkog — netko je jučer naručio puno margherita.</p>
+          <p style="font:400 17px/1.7 'Work Sans',sans-serif;color:#4c4638;margin:0">Danas za peći stoji treća generacija. Recept se nije mijenjao, tanjuri jesu, a kulen i dalje stiže iz Baranje od istog čovjeka.</p>
+        </div>
+        <div style="{{ storyImgsStyle }}">
+          <img src="images/prica/obitelj-danas.png" alt="Ekipa Slavonike danas" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;display:block">
+          <img src="images/prica/obitelj-2000.jpg" alt="Obitelj Slavonika, 2000." style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;margin-top:30px;display:block">
+        </div>
+      </div>
+
+      <div id="2a-prostor" style="{{ secProstorStyle }}">
+        <h2 style="{{ galTitleStyle }}">Kod nas</h2>
+        <div style="overflow:hidden;padding:20px 0">
+          <div style="{{ galStrip }}">
+            <sc-for list="{{ galItems }}" as="g" hint-placeholder-count="6">
+              <div style="{{ g.style }}">{{ g.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div id="2a-recenzije" style="{{ secRecenzijeStyle }}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:44px">
+          <h2 style="font:400 40px/1 'Instrument Serif',serif;margin:0">Recenzije</h2>
+          <div style="font:500 13px/1 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#d33a2c">4,8 / 5 · Google</div>
+        </div>
+        <div style="{{ reviewsGridStyle }}">
+          <div style="background:#eae2d0;border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:16px">
+            <div style="color:#e8a33d;font:400 18px/1 'Work Sans',sans-serif;letter-spacing:.12em">★★★★★</div>
+            <p style="font:400 16px/1.6 'Work Sans',sans-serif;color:#2e2a22;margin:0;text-wrap:pretty;flex:1">Najbolja pizza koju sam jela u Osijeku. Tijesto je tanko i hrskavo, a kulen pizza je odlična. Doći ćemo opet.</p>
+            <div style="font:500 12px/1.4 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6b6353">Ivana K. · Zagreb</div>
+          </div>
+          <div style="background:#eae2d0;border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:16px">
+            <div style="color:#e8a33d;font:400 18px/1 'Work Sans',sans-serif;letter-spacing:.12em">★★★★★</div>
+            <p style="font:400 16px/1.6 'Work Sans',sans-serif;color:#2e2a22;margin:0;text-wrap:pretty;flex:1">Naručili smo dostavu u petak navečer i stigla je za pola sata, još topla. Osoblje ljubazno, cijene korektne.</p>
+            <div style="font:500 12px/1.4 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6b6353">Marko P. · Osijek</div>
+          </div>
+          <div style="background:#eae2d0;border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:16px">
+            <div style="color:#e8a33d;font:400 18px/1 'Work Sans',sans-serif;letter-spacing:.12em">★★★★★</div>
+            <p style="font:400 16px/1.6 'Work Sans',sans-serif;color:#2e2a22;margin:0;text-wrap:pretty;flex:1">Lijepo mjesto u Tvrđi, ljeti je terasa prava stvar. Probali smo Slavonsku i Margheritu, obje vrlo dobre.</p>
+            <div style="font:500 12px/1.4 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#6b6353">Ana B. · Vinkovci</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="2a-dostava" style="{{ secDostavaStyle }}">
+        <div>
+          <h2 style="font:400 34px/1.1 'Instrument Serif',serif;margin:0 0 20px">Dostava</h2>
+          <p style="font:400 17px/1.7 'Work Sans',sans-serif;color:#d9cfbd;margin:0 0 18px">Cijeli Osijek, svaki dan. Besplatno iznad 20 €, inače 2,50 €. Vozimo i po kiši, po snijegu i na dan derbija.</p>
+          <div style="{{ hoodsStyle }}">Tvrđa · Gornji grad · Donji grad · Retfala · Sjenjak · Jug II</div>
+        </div>
+        <div style="{{ hoursBlockStyle }}">
+          <h2 style="font:400 34px/1.1 'Instrument Serif',serif;margin:0 0 20px">Radno vrijeme</h2>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(246,241,230,.2);font:500 16px/1 'Work Sans',sans-serif"><span>Pon – Čet</span><span>11:00 – 23:00</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(246,241,230,.2);font:500 16px/1 'Work Sans',sans-serif"><span>Pet – Sub</span><span>11:00 – 01:00</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;font:500 16px/1 'Work Sans',sans-serif"><span>Nedjelja</span><span>12:00 – 22:00</span></div>
+        </div>
+      </div>
+
+      <div id="2a-kontakt" style="{{ secKontaktStyle }}">
+        <div>
+          <h2 style="font:400 40px/1.05 'Instrument Serif',serif;margin:0 0 20px">Pronađi nas u<br>Tvrđi.</h2>
+          <div style="font:400 17px/1.7 'Work Sans',sans-serif;color:#4c4638">Franjevačka 12, Tvrđa<br>31000 Osijek</div>
+          <div style="font: 400 24px/1.3 'Instrument Serif',serif; color: #d33a2c; margin-top: 16px; font-size: 41px">031 555 123</div>
+          <div style="font:400 14px/1.6 'DM Mono',monospace;color:#6b6353;margin-top:10px">bok@slavonika.hr</div>
+        </div>
+        <img src="images/karta.png" alt="Karta Tvrđe s Pizzerijom Slavonika" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;display:block">
+      </div>
+
+      <div style="padding:26px 44px;background:#17140f;color:#a79c88;display:flex;justify-content:space-between;font:400 13px/1 'DM Mono',monospace">
+        <span>© 2026 Pizzeria Slavonika</span><span>Osijek, Hrvatska</span>
+      </div>
+      <a href="tel:+38531555123" style="{{ callBarStyle }}" style-hover="background:#e8a33d;color:#17140f">Naruči telefonom · 031 555 123</a>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MENU = [
+  { name: "Slavonika", img: "images/menu/slavonika.png", cat: "Slavonska", price: 12.5, desc: "Kulen, feferoni, dimljeni sir, vrhnje. Naš potpis i razlog zašto imamo stalne goste." },
+  { name: "Tvrđa", img: "images/menu/tvrdja.png", cat: "Klasika", price: 13.9, desc: "Pršut, rikula, parmezan, kap maslinovog ulja. Elegantna, ali se jede rukama." },
+  { name: "Drava", img: "images/menu/drava.png", cat: "Klasika", price: 11.8, desc: "Tuna, kapari, crveni luk, limun. Za one koji su rekli da ne jedu ribu na pizzi." },
+  { name: "Margherita", img: "images/menu/margherita.png", cat: "Klasika", price: 8.9, desc: "Pelati, fior di latte, bosiljak. Test svake pizzerije — mi ga volimo polagati." },
+  { name: "Baranjska", img: "images/menu/baranjska.png", cat: "Slavonska", price: 12.2, desc: "Čvarci, crveni luk, ljuta paprika. Nije za prvi spoj, ali jest za drugi." },
+  { name: "Kukuruzište", img: "images/menu/kukuruziste.png", cat: "Vege", price: 10.5, desc: "Tikvice, kukuruz, kozji sir, timijan. Povrće koje se ne ispričava." },
+  { name: "Četiri sira", img: "images/menu/cetiri-sira.png", cat: "Vege", price: 11.5, desc: "Gorgonzola, parmezan, mozzarella, dimljeni. Zovi lift, ne stepenice." },
+  { name: "Capricciosa", img: "images/menu/capricciosa.png", cat: "Klasika", price: 10.9, desc: "Šunka, šampinjoni, masline. Ista otkad znamo za sebe i to je poanta." }
+];
+const eur = (n) => n.toFixed(2).replace(".", ",") + " €";
+
+class Component extends DCLogic {
+  state = { sizeD: "S", gal: 6, galAnim: true, navOpen: false, vw: 1200, slice: 0 };
+
+  componentDidMount() {
+    this._gal = setInterval(() => {
+      const n = this.state.gal + 1;
+      this.setState({ gal: n, galAnim: true });
+      if (n >= 12) {
+        setTimeout(() => this.setState({ gal: n - 6, galAnim: false }), 760);
+        setTimeout(() => this.setState({ galAnim: true }), 900);
+      }
+    }, 2000);
+    this._slice = setInterval(() => this.setState((s) => ({ slice: s.slice + 1 })), 2200);
+    this._onResize = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener("resize", this._onResize);
+    this._onResize();
+    this._mq = window.matchMedia("(pointer: coarse)");
+    this._onMq = (e) => this.setState({ touch: e.matches });
+    this._mq.addEventListener("change", this._onMq);
+    this.setState({ touch: this._mq.matches });
+  }
+  _go(id, e) {
+    if (e) e.preventDefault();
+    const el = (this._rootEl && this._rootEl.querySelector(`[id="${id}"]`)) || document.getElementById(id);
+    const nav = this._navEl;
+    if (!el || !nav) return;
+    let sp = el.parentElement;
+    while (sp && sp !== document.body) {
+      const cs = getComputedStyle(sp);
+      if (/(auto|scroll)/.test(cs.overflowY) && sp.scrollHeight > sp.clientHeight + 1) break;
+      sp = sp.parentElement;
+    }
+    const inner = sp && sp !== document.body;
+    const target = inner ? sp : window;
+    const calc = () => {
+      const bar = nav.firstElementChild || nav;
+      const sr = inner ? sp.getBoundingClientRect() : null;
+      const scale = inner && sp.offsetHeight ? sr.height / sp.offsetHeight : 1;
+      const stickTop = inner ? sr.top + sp.clientTop * scale : 0;
+      return Math.round((el.getBoundingClientRect().top - (stickTop + bar.getBoundingClientRect().height)) / (scale || 1));
+    };
+    this.setState({ navOpen: false });
+    clearTimeout(this._goStart); clearTimeout(this._goFix);
+    const cur = () => (inner ? sp.scrollTop : window.scrollY);
+    this._goStart = setTimeout(() => {
+      const dest = Math.max(0, cur() + calc());
+      target.scrollTo({ top: dest, behavior: "smooth" });
+      let last = -1, still = 0;
+      const poll = () => {
+        const now = cur();
+        still = Math.abs(now - last) < 1 ? still + 1 : 0; last = now;
+        if (still < 3) { this._goFix = setTimeout(poll, 60); return; }
+        const d = calc(); if (Math.abs(d) > 1) target.scrollTo({ top: Math.max(0, now + d) });
+      };
+      this._goFix = setTimeout(poll, 120);
+    }, 30);
+  }
+  componentWillUnmount() { clearInterval(this._slice); clearInterval(this._gal); window.removeEventListener("resize", this._onResize); if (this._mq) this._mq.removeEventListener("change", this._onMq); }
+
+  renderVals() {
+
+    const bigD = this.state.sizeD === "L";
+    const pizzasD = MENU.map((p) => ({
+      name: p.name, desc: p.desc, price: eur(bigD ? p.price + 5 : p.price),
+      imgStyle: `aspect-ratio:1/1;border-radius:10px;margin-bottom:14px;background:#231f14 url('${p.img}') 50% 50%/cover no-repeat`
+    }));
+    const segD = (on) => `background:${on ? "#e8a33d" : "transparent"};color:${on ? "#17140f" : "#cdc4b3"};border:none;font:600 13px/1 'Work Sans',sans-serif;padding:11px 18px;border-radius:999px;cursor:pointer`;
+
+    const GAL = ["sala", "terasa", "sank", "pec", "pizza", "detalj-stola"];
+    const GEXT = { sala: "jpg", terasa: "png", sank: "png", pec: "jpg", pizza: "jpg", "detalj-stola": "jpg" };
+    const mob = (this.state.vw || 1200) <= 760;
+    void mob;
+    const W = mob ? 196 : 250, GAP = mob ? 10 : 14, STEP = W + GAP;
+    const galItems = [];
+    for (let i = 0; i < 18; i++) {
+      const on = i === this.state.gal;
+      galItems.push({
+        label: "",
+        style: `width:${W}px;flex:0 0 ${W}px;aspect-ratio:3/4;border-radius:10px;background:#231f14 url('images/gal/s-${GAL[i % 6]}.jpg') 50% 50%/cover no-repeat;transform:scale(${on ? 1.14 : 0.94});opacity:${on ? 1 : 0.55};transition:${this.state.galAnim ? "transform .7s cubic-bezier(.4,0,.2,1),opacity .7s ease" : "none"}`
+      });
+    }
+    const galStrip = `display:flex;gap:${GAP}px;width:max-content;margin-left:50%;will-change:transform;transform:translateX(${-(this.state.gal * STEP + W / 2)}px);transition:${this.state.galAnim ? "transform .7s cubic-bezier(.4,0,.2,1)" : "none"}`;
+
+    const vw = this.state.vw || (typeof window !== "undefined" ? window.innerWidth : 1200);
+    const m = vw <= 760;           // mobile
+    const t = vw <= 1000 && !m;    // tablet
+    const px = m ? 20 : 44;
+    const navH = m ? this.state.navH || 78 : 0;
+    const padX = m ? `${px}px` : `max(${px}px, calc(50% - 650px))`;
+    const sec = (extra) => `scroll-margin-top:${navH}px;padding:${m ? 44 : 80}px ${padX} ${m ? 42 : 72}px;${extra}`;
+
+    return {
+      pizzasD, galItems, galStrip,
+      heroBtnRowStyle: `display:flex;gap:${m ? 18 : 34}px;flex-wrap:wrap;align-items:center`,
+      heroCtaStyle: `background:#17140f;color:#f6f1e6;font:600 ${m ? 16 : 15}px/1 'Work Sans',sans-serif;padding:${m ? "18px 22px" : "19px 30px"};border-radius:4px`,
+      rootRef: (el) => {
+        if (el) this._rootEl = el;
+        if (!el || this._ro) return;
+        this._ro = new ResizeObserver((es) => {
+          const w = Math.round(es[0].contentRect.width);
+          if (w && w !== this.state.vw) this.setState({ vw: w });
+        });
+        this._ro.observe(el);
+        this.setState({ vw: Math.round(el.getBoundingClientRect().width) });
+      },
+      cardHeadStyle: m
+        ? `display:flex;flex-direction:column;align-items:flex-start;gap:6px`
+        : `display:flex;align-items:baseline;gap:10px;justify-content:space-between`,
+      cardPriceStyle: `font:500 17px/1 'Work Sans',sans-serif;color:#e8a33d;white-space:nowrap`,
+      storyImgsStyle: `display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px`,
+      hoodsStyle: `font:400 ${m ? 12 : 14}px/2 'DM Mono',monospace;color:#e8a33d`,
+      pizzaImgStyle: `position:absolute;top:0;right:0;bottom:0;left:0;background-image:url('images/pizza-hero-hd.png');background-size:contain;background-repeat:no-repeat;background-position:50% 50%;filter:drop-shadow(0 24px 38px rgba(23,20,15,.26));transform:rotate(${this.state.slice * 45}deg);transition:transform 1s cubic-bezier(.5,0,.2,1)`,
+      ringStyle: `position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;transform:rotate(${this.state.slice * 45}deg);transition:transform 1s cubic-bezier(.5,0,.2,1)`,
+      pillTextStyle: `display:inline-block;background:rgba(23,20,15,.86);color:#f6f1e6;font:500 12px/1 'DM Mono',monospace;letter-spacing:.04em;padding:7px 10px;border-radius:999px;white-space:nowrap;transform:rotate(${-this.state.slice * 45}deg);transition:transform 1s cubic-bezier(.5,0,.2,1)`,
+      galTitleStyle: `font:400 ${m ? 34 : 40}px/1 'Instrument Serif',serif;margin:0 0 24px;padding:0 ${padX}`,
+      hoursBlockStyle: m
+        ? `margin-top:6px`
+        : ``,
+      shellStyle: `width:100%;margin:0 auto`,
+      cardStyle: `border-radius:0;overflow:clip;background:#fcfaf5;color:#17140f;box-shadow:none`,
+      pageStyle: `display:flex;flex-wrap:wrap;gap:64px;padding:0;align-items:flex-start;font-family:'Space Grotesk',sans-serif`,
+      goMenu: (e) => this._go("2a-menu", e),
+      goPrica: (e) => this._go("2a-prica", e),
+      goProstor: (e) => this._go("2a-prostor", e),
+      goRecenzije: (e) => this._go("2a-recenzije", e),
+      goDostava: (e) => this._go("2a-dostava", e),
+      go: (id) => (e) => this._go(id, e),
+      navRef: (el) => {
+        this._navEl = el || this._navEl;
+        if (!el || this._navRo) return;
+        const measure = () => {
+          const h = Math.round(el.getBoundingClientRect().height);
+          if (h && h !== this.state.navH) this.setState({ navH: h });
+        };
+        this._navRo = new ResizeObserver(measure);
+        measure();
+        this._navRo.observe(el);
+      },
+      navStyle: `position:sticky;top:0;z-index:20;background:#3b2a1e;color:#f6f1e6;border-bottom:1px solid rgba(232,163,61,.45)`,
+      navBarStyle: `display:flex;align-items:center;justify-content:space-between;gap:16px;padding:${m ? "16px 20px" : `22px ${padX}`}`,
+      brandStyle: `font:400 ${m ? 24 : 26}px/1 'Instrument Serif',serif`,
+      navLinksStyle: `display:${m ? "none" : "flex"};gap:${t ? 24 : 40}px;font:500 14px/1 'Work Sans',sans-serif;color:#cdc4b3`,
+      navCtaStyle: `display:${m ? "none" : "inline-block"};background:#d33a2c;color:#fff;font:600 14px/1 'Work Sans',sans-serif;padding:13px 22px;border-radius:4px`,
+      burgerStyle: `display:${m ? "flex" : "none"};align-items:center;justify-content:center;width:44px;height:44px;background:transparent;border:1px solid rgba(232,163,61,.45);border-radius:8px;color:#f6f1e6;font:400 20px/1 'Work Sans',sans-serif;cursor:pointer`,
+      burgerIcon: this.state.navOpen ? "✕" : "☰",
+      toggleMenu: () => this.setState((s) => ({ navOpen: !s.navOpen })),
+      closeMenu: () => this.setState({ navOpen: false }),
+      mobileMenuStyle: `display:${m && this.state.navOpen ? "flex" : "none"};flex-direction:column;padding:8px 20px 24px;font:500 17px/1 'Work Sans',sans-serif;color:#f6f1e6`,
+      heroStyle: `padding:${m ? "28px 20px 8px" : `32px max(28px, calc(50% - 650px)) 28px ${padX}`};display:grid;grid-template-columns:${m ? "1fr" : "1fr 1.62fr"};gap:${m ? 18 : 24}px;align-items:center;position:relative`,
+      h1Style: `font:400 ${m ? 52 : t ? 56 : 70}px/1 'Instrument Serif',serif;letter-spacing:-.01em;margin:0 0 22px`,
+      phoneLineStyle: `font:400 ${m ? 23 : 26}px/1.4 'Instrument Serif',serif;color:#4c4638;margin-top:${m ? 22 : 34}px`,
+      phoneNumStyle: `color:#d33a2c;font-size:${m ? 32 : 38}px`,
+      pizzaBoxStyle: `position:relative;width:100%;max-width:740px;aspect-ratio:1/1;margin:0 auto;zoom:${m ? 0.62 : 1}`,
+      secMenuStyle: sec("background:#17140f;color:#f6f1e6"),
+      menuGridStyle: `display:grid;grid-template-columns:repeat(${m ? 2 : t ? 3 : 4},minmax(0,1fr));gap:${m ? 12 : 18}px;margin-top:8px`,
+      secPricaStyle: sec(`display:grid;grid-template-columns:${m ? "1fr" : "1.1fr .9fr"};gap:${m ? 28 : 52}px;align-items:center`),
+      secProstorStyle: `scroll-margin-top:${navH}px;padding:${m ? 44 : 80}px 0 ${m ? 40 : 64}px;background:#eae2d0`,
+      secDostavaStyle: sec(`background:#3b2a1e;color:#f6f1e6;display:grid;grid-template-columns:${m ? "1fr" : "1fr 1fr"};gap:${m ? 28 : 52}px`),
+      secRecenzijeStyle: sec(`background:#fcfaf5`),
+      reviewsGridStyle: `display:grid;grid-template-columns:${m ? "1fr" : t ? "1fr 1fr" : "repeat(3,minmax(0,1fr))"};gap:${m ? 12 : 18}px`,
+      secKontaktStyle: sec(`background:#eae2d0;display:grid;grid-template-columns:${m ? "1fr" : "minmax(0,.8fr) minmax(0,1.4fr)"};gap:${m ? 24 : 44}px;align-items:center`),
+      callBarStyle: `display:${m ? "flex" : "none"};position:sticky;bottom:12px;margin:0 12px 12px;z-index:30;align-items:center;justify-content:center;background:#d33a2c;color:#fff;font:600 16px/1 'Work Sans',sans-serif;padding:18px 20px;border-radius:999px;box-shadow:0 12px 28px rgba(23,20,15,.3)`,
+      phoneNoteStyle: `display:${this.state.touch ? "none" : "block"};font:400 17px/1.6 'Work Sans',sans-serif;color:#4c4638;margin-top:16px`,
+      dSizeLabel: bigD ? "45 cm" : "32 cm",
+      dPickSmall: () => this.setState({ sizeD: "S" }),
+      dPickLarge: () => this.setState({ sizeD: "L" }),
+      dSmallStyle: segD(!bigD),
+      dLargeStyle: segD(bigD)
+    };
+  }
+}
+</script>
+</body>
+</html>
